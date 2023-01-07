@@ -1,0 +1,77 @@
+<form [formGroup]="interfacesForm" *ngIf="interfacesForm">
+  <div formArrayName="interfaces">
+    <div *ngFor="let interface of interfacesForm.controls['interfaces'].controls; let i = index">
+      <div [formGroupName]="i">
+
+        <label for="">id_interface</label>
+        <input type="text" formControlName="id_interface">
+        <br>
+
+        <label for="">estatus</label>
+        <input type="text" formControlName="estatus">
+        <br>
+
+        <label for="">etiqueta_prtg</label>
+        <input type="text" formControlName="etiqueta_prtg">
+        <br>
+
+        <label for="">grupo</label>
+        <input type="text" formControlName="grupo">
+        <br>
+
+        <label for="">if_index</label>
+        <input type="text" formControlName="if_index">
+        <br>
+
+        <label for="">bw</label>
+        <input type="text" formControlName="bw">
+        <br>
+
+        <label for="">bw_al</label>
+        <input type="text" formControlName="bw_al">
+        <br>
+
+        <label for="">id_prtg</label>
+        <input type="text" formControlName="id_prtg">
+        <br>
+
+        <label for="">ospf</label>
+        <input type="text" formControlName="ospf">
+        <br>
+
+        <label for="">description</label>
+        <input type="text" formControlName="description">
+        <br>
+
+        <label for="">ultima_actualizacion</label>
+        <input type="text" formControlName="ultima_actualizacion">
+        <br>
+
+        <div formGroupName="id_EquipoOrigen">
+          <h4>id_EquipoOrigen</h4>
+
+          <label for="">id_equipo</label>
+          <input type="text" formControlName="id_equipo">
+          <br>
+
+          <label for="">nombre</label>
+          <input type="text" formControlName="nombre">
+          <br>
+
+          <label for="">localidad</label>
+          <input type="text" formControlName="localidad">
+          <br>
+
+          <label for="">categoria</label>
+          <input type="text" formControlName="categoria">
+          <br>
+        </div>
+        <button (click)="removeInterfaceAtIndex(i)">Remove Interface</button>
+        <br>
+        <br>
+        <hr>
+      </div>
+    </div>
+    <button (click)="addNewInterface()">Add Interface</button>
+  </div>
+</form>
